@@ -273,6 +273,8 @@ impl ::log::Log for EspLogger {
             write!(stdout, ") {}: {}", target, args).unwrap();
             if color.is_some() {
                 writeln!(stdout, "\x1b[0m").unwrap();
+            } else {
+                writeln!(stdout, "").unwrap();
             }
         }
     }
